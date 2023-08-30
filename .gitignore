@@ -1,2 +1,27 @@
 
 *.json
+*.dll
+*.cs
+*.editorconfig
+*.cache
+*.exe
+*.targets
+*.config
+*.vsidx
+*.v2
+EcoLogisticsAPI/.vs/EcoLogisticsAPI/v16/.suo
+EcoLogisticsAPI/.vs/EcoLogisticsAPI/v17/.suo
+*.bin
+*.so
+*.pdb
+*.a
+*.dylib
+*.txt
+*.zip
+*.pubxml
+*.props
+*.csproj
+*.user
+*.sln
+*.BuildWithSkipAnalyzers
+*.CopyComplete
