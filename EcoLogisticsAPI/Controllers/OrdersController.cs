@@ -119,10 +119,11 @@ namespace EcoLogisticsAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(short id)
         {
-            if (_context.Orders == null)
+            if (!OrderExists(id))
             {
                 return NotFound();
             }
+
             var order = await _context.Orders.FindAsync(id);
             if (order == null)
             {

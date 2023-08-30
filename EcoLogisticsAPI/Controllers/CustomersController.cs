@@ -122,10 +122,11 @@ namespace EcoLogisticsAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer(short id)
         {
-            if (_context.Customers == null)
+            if (!CustomerExists(id))
             {
                 return NotFound();
             }
+
             var customer = await _context.Customers.FindAsync(id);
             if (customer == null)
             {
