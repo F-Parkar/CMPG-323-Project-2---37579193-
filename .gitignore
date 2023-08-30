@@ -1,7 +1,6 @@
 
 *.json
 *.dll
-*.cs
 *.editorconfig
 *.cache
 *.exe
