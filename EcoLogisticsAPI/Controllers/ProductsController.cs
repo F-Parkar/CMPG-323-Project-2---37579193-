@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoLogisticsAPI.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace EcoLogisticsAPI.Controllers
 {
@@ -115,6 +116,54 @@ namespace EcoLogisticsAPI.Controllers
             return CreatedAtAction("GetProduct", new { id = product.ProductId }, product);
         }
 
+        // PATCH:  PATCH method that will update an existing Product entry on the database
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateProduct(short id, [FromBody] JsonPatchDocument<Product> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
+            if (_context.Products == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            patchDoc.ApplyTo(product); // Apply patch operations to the customer object
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
         // DELETE: DELETE method that will delete an existing Product entry on the database
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(short id)
@@ -134,7 +183,5 @@ namespace EcoLogisticsAPI.Controllers
 
             return NoContent();
         }
-
-        
     }
 }
