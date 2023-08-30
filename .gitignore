@@ -19,7 +19,6 @@ EcoLogisticsAPI/.vs/EcoLogisticsAPI/v17/.suo
 EcoLogisticsAPI/obj/Debug/net6.0/EcoLogisticsAPI.csproj.BuildWithSkipAnalyzers
 *.user
 *.sln
-*.cs
 *.CopyComplete
 *.props
 *.targets
