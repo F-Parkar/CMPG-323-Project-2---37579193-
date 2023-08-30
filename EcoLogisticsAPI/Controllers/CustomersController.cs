@@ -22,6 +22,12 @@ namespace EcoLogisticsAPI.Controllers
             _context = context;
         }
 
+        //private method in the API that checks if a Customer exists 
+        private bool CustomerExists(short id)
+        {
+            return (_context.Customers?.Any(e => e.CustomerId == id)).GetValueOrDefault();
+        }
+
         // GET: GET method that retrieves all Customer entries from the database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
@@ -32,6 +38,7 @@ namespace EcoLogisticsAPI.Controllers
           }
             return await _context.Customers.ToListAsync();
         }
+
 
         // GET: GET method that will retrieve one Customer from the database based on the ID parsed through
         [HttpGet("{id}")]
@@ -131,10 +138,6 @@ namespace EcoLogisticsAPI.Controllers
             return NoContent();
         }
 
-        private bool CustomerExists(short id)
-        {
-            return (_context.Customers?.Any(e => e.CustomerId == id)).GetValueOrDefault();
-        }
 
         // PATCH:  PATCH method that will update an existing Customer entry on the database
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
