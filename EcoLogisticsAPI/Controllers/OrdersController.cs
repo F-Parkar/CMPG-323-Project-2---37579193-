@@ -21,6 +21,7 @@ namespace EcoLogisticsAPI.Controllers
             _context = context;
         }
 
+        //private method in the API that checks if an Order exists 
         private bool OrderExists(short id)
         {
             return (_context.Orders?.Any(e => e.OrderId == id)).GetValueOrDefault();
@@ -54,6 +55,23 @@ namespace EcoLogisticsAPI.Controllers
 
             return order;
         }
+
+        // GET: GET method that retrieves all orders for a specific customer 
+        [HttpGet("ByCustomer/{customerId}")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrdersByCustomer(short customerId)
+        {
+            var orders = await _context.Orders
+                .Where(order => order.CustomerId == customerId)
+                .ToListAsync();
+
+            if (OrderExists(customerId) || orders.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return orders;
+        }
+
 
         // PUT: api/Orders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
