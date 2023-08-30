@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoLogisticsAPI.Models;
+using Microsoft.AspNetCore.JsonPatch;
+
 
 namespace EcoLogisticsAPI.Controllers
 {
@@ -133,5 +135,54 @@ namespace EcoLogisticsAPI.Controllers
         {
             return (_context.Customers?.Any(e => e.CustomerId == id)).GetValueOrDefault();
         }
+
+        // PATCH:  PATCH method that will update an existing Customer entry on the database
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateCustomer(short id, [FromBody] JsonPatchDocument<Customer> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
+
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            patchDoc.ApplyTo(customer); // Apply patch operations to the customer object
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CustomerExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
     }
 }
