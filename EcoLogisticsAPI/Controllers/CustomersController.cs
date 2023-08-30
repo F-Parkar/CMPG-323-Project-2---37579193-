@@ -20,7 +20,7 @@ namespace EcoLogisticsAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Customers
+        // GET: GET method that retrieves all Customer entries from the database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
@@ -31,7 +31,7 @@ namespace EcoLogisticsAPI.Controllers
             return await _context.Customers.ToListAsync();
         }
 
-        // GET: api/Customers/5
+        // GET: GET method that will retrieve one Customer from the database based on the ID parsed through
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(short id)
         {
@@ -80,7 +80,7 @@ namespace EcoLogisticsAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Customers
+        // POST: POST method that will create a new Customer entry on the database
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
@@ -109,7 +109,7 @@ namespace EcoLogisticsAPI.Controllers
             return CreatedAtAction("GetCustomer", new { id = customer.CustomerId }, customer);
         }
 
-        // DELETE: api/Customers/5
+        // DELETE: DELETE method that will delete an existing Customer entry on the database
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer(short id)
         {
