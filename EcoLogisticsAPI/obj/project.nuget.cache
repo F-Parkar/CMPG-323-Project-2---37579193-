@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y1UUfLgxKLuPXwCjkbd1Dkj4E9OPl6MWQHc+ggA9Q4oPW/qiBtMRlyIEp4vLUXOwbrMn54m2x2Hx5d5cy/hZZA==",
+  "dgSpecHash": "94piCt6vwxSmZszZv3S5XZ6QtAdFndbE/o+fYYBE7G8HcaojBGMaQAPudNLlBaZz3fraeFR8+0KWH1bMyKn0FQ==",
   "success": true,
-  "projectFilePath": "D:\\NWU\\3rd Year\\2nd_Semester\\CMPG 323\\2023\\Projects\\P2\\EcoLogisticsAPI\\EcoLogisticsAPI.csproj",
+  "projectFilePath": "D:\\NWU\\3rd Year\\2nd_Semester\\CMPG 323\\2023\\Projects\\P2\\GitClone\\CMPG-323-Project-2---37579193-\\EcoLogisticsAPI\\EcoLogisticsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Furqaan\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Furqaan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
