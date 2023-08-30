@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kgo8rIqccMUkQGoEKh5E4buLx2LXXyv3KsaYrRooeO4=",
+  "Source": "EcoLogisticsAPI",
+  "BasePath": "_content/EcoLogisticsAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
