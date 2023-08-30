@@ -20,7 +20,13 @@ namespace EcoLogisticsAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Products
+        //private method in the API that checks if an Order exists 
+        private bool ProductExists(short id)
+        {
+            return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
+        }
+
+        // GET:GET method that retrieves all Product entries from the database
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
@@ -31,7 +37,7 @@ namespace EcoLogisticsAPI.Controllers
             return await _context.Products.ToListAsync();
         }
 
-        // GET: api/Products/5
+        // GET: Create a GET method that will retrieve one Product from the database based on the ID parsed through
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(short id)
         {
@@ -80,7 +86,7 @@ namespace EcoLogisticsAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: POST method that will create a new Product entry on the database
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
@@ -109,11 +115,11 @@ namespace EcoLogisticsAPI.Controllers
             return CreatedAtAction("GetProduct", new { id = product.ProductId }, product);
         }
 
-        // DELETE: api/Products/5
+        // DELETE: DELETE method that will delete an existing Product entry on the database
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(short id)
         {
-            if (_context.Products == null)
+            if (!ProductExists(id))
             {
                 return NotFound();
             }
@@ -129,9 +135,6 @@ namespace EcoLogisticsAPI.Controllers
             return NoContent();
         }
 
-        private bool ProductExists(short id)
-        {
-            return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
-        }
+        
     }
 }
