@@ -56,6 +56,20 @@ namespace EcoLogisticsAPI.Controllers
             return product;
         }
 
+        // GET: GET method that retrieves all products for a specific order (based on the order ID that is parsed through)
+        [HttpGet("Order/{orderId}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsForOrder(short orderId)
+        {
+            var products = await _context.Products.Where(p => p.OrderDetails.Any(od => od.OrderId == orderId)).ToListAsync();
+            if (ProductExists(orderId) || products.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return products;
+        }
+
+
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
