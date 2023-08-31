@@ -869,3 +869,9 @@ D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\TEST\EcoLogisticsAPI\bin\Debug\net6.0
 D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\TEST\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\TEST\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\TEST\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

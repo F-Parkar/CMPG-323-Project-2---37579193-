@@ -1,6 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using EcoLogisticsAPI.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
 using EcoLogisticsAPI.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -19,18 +18,26 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Linq;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-
+builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+//authentication code:
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString, sqlOptions =>
+        sqlOptions.EnableRetryOnFailure()));
+
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<EcoPower_LogisticsDBContext>(options => options.UseSqlServer(connectionString));
+
 
 // For Identity  
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
 
 // Adding Authentication  
 builder.Services.AddAuthentication(options =>
@@ -62,6 +69,10 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
     .AddEnvironmentVariables();
 
 
+
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
@@ -74,7 +85,7 @@ builder.Services.AddSwaggerGen(c =>
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
+        Description = "Enter 'Bearer {token}'",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer",
@@ -101,7 +112,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -109,6 +119,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "EcoLogisticsAPI");
+        options.RoutePrefix = string.Empty;
+    });
+
 }
 
 app.UseHttpsRedirection();

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <NameOfLastUsedPublishProfile>D:\NWU\3rd Year\2nd Semester\CMPG 323\2023\Projects\P2\EcoLogisticsAPI\Properties\PublishProfiles\EcoLogisticsAPI - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\NWU\3rd Year\2nd_Semester\CMPG 323\2023\Projects\P2\GitClone\CMPG-323-Project-2---37579193-\EcoLogisticsAPI\Properties\PublishProfiles\EcoLogisticsAPI - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
     <Controller_SelectedScaffolderID>ApiControllerWithContextScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_ControllerDialogWidth>650.4</WebStackScaffolding_ControllerDialogWidth>
