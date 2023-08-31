@@ -39,7 +39,77 @@
 - Use the different endpoints to carry out the required CRUD actions on the logistical data.
 
 # Documentation
--
+
+# For Products Controller:
+- Endpoint: 'GET /api/products'
+- Description: Retrieve a list of all products available in the inventory.
+
+# Get Product by ID
+- Endpoint: GET /api/products/{id}
+- Description: Retrieve details of a specific product based on its ID.
+
+# Get Products for Order
+- Endpoint: GET /api/products/Order/{orderId}
+- Description: Retrieve a list of products associated with a specific order.
+
+# Create Product
+- Endpoint: POST /api/products
+- Description: Create a new product entry in the inventory.
+
+# Update Product
+- Endpoint: PUT /api/products/{id}
+- Description: Update the details of an existing product.
+
+# Delete Product
+- Endpoint: DELETE /api/products/{id}
+- Description: Delete a product entry from the inventory.
 
 
+#For Orders Controller
 
+# Get All Orders
+- Endpoint: GET /api/orders
+- Description: Retrieve a list of all orders.
+
+# Get Order by ID
+- Endpoint: GET /api/orders/{id}
+- Description: Retrieve details of a specific order based on its ID.
+
+# Get Orders by Customer
+- Endpoint: GET /api/orders/ByCustomer/{customerId}
+- Description: Retrieve a list of orders associated with a specific customer.
+
+# Create Order
+- Endpoint: POST /api/orders
+- Description: Place a new order for solar energy system components.
+
+# Update Order
+- Endpoint: PUT /api/orders/{id}
+- Description: Update the details of an existing order.
+
+# Delete Order
+- Endpoint: DELETE /api/orders/{id}
+- Description: Delete an order from the system.
+
+
+# Customers Controller
+
+# Get All Customers
+- Endpoint: GET /api/customers
+- Description: Retrieve a list of all customers.
+
+# Get Customer by ID
+- Endpoint: GET /api/customers/{id}
+- Description: Retrieve details of a specific customer based on their ID.
+
+# Create Customer
+- Endpoint: POST /api/customers
+- Description: Create a new customer entry in the database.
+
+# Update Customer
+- Endpoint: PUT /api/customers/{id}
+- Description: Update the details of an existing customer.
+
+# Delete Customer
+- Endpoint: DELETE /api/customers/{id}
+- Description: Delete a customer from the database.
