@@ -25,9 +25,9 @@
 - Have an active Azure subscription for hosting the database.
 
 # Installation
--Clone the repository.
--Open the folder and add the controllers,models, project.cs and obj to your visual studios file
--Build the solution to restore NuGet packages and compile the project.
+- Clone the repository.
+- Open the folder and copy the controllers,models, project.cs and obj to your visual studios file
+- Build the solution to restore NuGet packages and compile the project.
 
 # Configure 
 - Include Azure database connection strings when configuring the database connection information in the appsettings.json file.
