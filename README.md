@@ -33,7 +33,7 @@
 - Include Azure database connection strings when configuring the database connection information in the appsettings.json file.
 - Set up authentication and permission in accordance with your company's needs. Such as your username and password
 
-#Purpose
+# Purpose
 - Use Visual Studio to launch the application 
 - An easy-to-use interface is provided by this interactive documentation so that users may explore and test the API endpoints.
 - Use the different endpoints to carry out the required CRUD actions on the logistical data.
