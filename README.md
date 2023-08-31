@@ -25,15 +25,15 @@
 - Have an active Azure subscription for hosting the database.
 
 # Installation
--Clone the repository.
--Open the folder and add the controllers,models, project.cs and obj to your visual studios file
--Build the solution to restore NuGet packages and compile the project.
+- Clone the repository.
+- Open the folder and copy the controllers,models, project.cs and obj to your visual studios file
+- Build the solution to restore NuGet packages and compile the project.
 
 # Configure 
 - Include Azure database connection strings when configuring the database connection information in the appsettings.json file.
 - Set up authentication and permission in accordance with your company's needs. Such as your username and password
 
-#Purpose
+# Purpose
 - Use Visual Studio to launch the application 
 - An easy-to-use interface is provided by this interactive documentation so that users may explore and test the API endpoints.
 - Use the different endpoints to carry out the required CRUD actions on the logistical data.
