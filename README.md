@@ -113,3 +113,9 @@
 # Delete Customer
 - Endpoint: DELETE /api/customers/{id}
 - Description: Delete a customer from the database.
+
+# Refernce 
+- CMPG323 - IT Developments (2023a). 17 Aug CMPG323 weekly virtual class Cloud, deploy API. YouTube. Available at: https://www.youtube.com/watch?v=murThM9ATJA&t=2787s&ab_channel=CMPG323-ITDevelopments [Accessed 31 Aug. 2023].
+- CMPG323 - IT Developments (2023b). 24 Aug CMPG323 weekly virtual class API Security. YouTube. Available at: https://www.youtube.com/watch?v=tg_0o6U_J-w&t=2322s&ab_channel=CMPG323-ITDevelopments [Accessed 31 Aug. 2023].
+- martinekuan (2023). Web API design best practices - Azure Architecture Center. [online] Microsoft.com. Available at: https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design [Accessed 31 Aug. 2023].
+- Mygreatlearning.com. (2023). Great Learning. [online] Available at: https://olympus.mygreatlearning.com/courses/42222 [Accessed 31 Aug. 2023].
