@@ -26,7 +26,7 @@
 
 # Installation
 - Clone the repository.
-- Open the folder and copy the controllers,models, project.cs and obj to your visual studios file
+- Open the folder open the EcoLogisticsAPI.sin
 - Build the solution to restore NuGet packages and compile the project.
 
 # Configure 
