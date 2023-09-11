@@ -1,5 +1,8 @@
 # CMPG-323-Project-2---37579193-
 
+# Link to API on Azure:
+- https://ecologisticsapi.azurewebsites.net/index.html
+  
 # Project Overview
 - The EcoPower Logistics CRUD RESTful API project, created in Visual Studio 2022 using C#, 
   showcases an effective API solution for managing logistics data. 
